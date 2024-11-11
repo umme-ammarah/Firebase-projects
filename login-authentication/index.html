@@ -4,62 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login-authentication</title>
+    <title>Signup & Login Authentication</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-6 text-info bg-dark mx-auto mt-5  rounded-5">
-           <!-- signup form -->
-           <form  class="pb-5">
-            <h2 class="text-center pt-5 pb-3">Signup Form</h2>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="InputPassword">
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button id="signupbtn" type="submit" class="btn btn-outline-warning mb-3">Sign Up</button>
-            <p>already  have an  account? <a href="Login"class="text-warning">Sign In</a></p>
-          </form>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card p-4 shadow-lg">
+                    <h3 class="text-center mb-4" id="formTitle">Sign Up</h3>
+                    
+                    <!-- Signup/Login Form -->
+                    <form id="authForm">
+                        <div class="mb-3">
+                            <label for="Name" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your Username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                        </div>
+                        
+                        <!-- Signup/Login Button -->
+                        <button type="submit" class="btn btn-primary w-100 mb-3" id="authButton">Sign Up</button>
+                        
+                        <!-- Google Login Button -->
+                        <button type="button" class="btn btn-outline-danger w-100 mb-3" id="googleLogin">
+                            <i class="fab fa-google"></i> Continue with Google
+                        </button>
+                        
+                        <!-- Forgot Password and Toggle Login/Signup -->
+                        <div class="d-flex justify-content-between">
+                            <a href="#" id="forgotPassword" class="text-decoration-none">Forgot Password?</a>
+                            <a href="#" id="toggleForm" class="text-decoration-none">Already have an account? Login</a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        <!-- <div class="row">
-            <div class="col-6 text-info bg-dark mx-auto mt-5  rounded-5"> -->
-           <!-- login form -->
-           <!-- <form  class="pb-5">
-            <h2 class="text-center pt-5 pb-3">Login Form</h2>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-outline-warning mb-3">Sign In</button>
-            <p>not have any account? <a href="Login"class="text-warning">Sign Up</a></p>
-          </form>
-            </div>
-        </div> -->
     </div>
+
+    <!-- Include Firebase and App JS -->
     <script src="./firebase.js" type="module"></script>
     <script src="app.js" type="module"></script>
+    <script src="toggleForm.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
